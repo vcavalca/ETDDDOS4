@@ -2,10 +2,10 @@
 Repositório criado para o trabalho do 5º semestre de ADS.
 
 **Grupo:**
-Getulio
-Murilo
-Pedro
-Vinicius
+<br>Getulio</br>
+<br>Murilo</br>
+<br>Pedro</br>
+<br>Vinicius</br>
 
 ## Work Objective
 

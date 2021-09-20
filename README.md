@@ -1,5 +1,5 @@
 # ETDDDOS4
-Repositório criado para o trabalho do 5º semestre de ADS.
+- Repositório criado para o trabalho do 5º semestre de ADS.
 
 **Grupo:**
 <br>Getulio
@@ -9,11 +9,11 @@ Repositório criado para o trabalho do 5º semestre de ADS.
 
 ## Work Objective
 
-Make a simple CRUD application with Mysql in C.
+- Make a simple CRUD application with Mysql in C.
 
 ## Clone
 
-To clone the repository use the command below:
+- To clone the repository use the command below:
 
 ```
 git clone https://github.com/vcavalca/ETDDDOS4.git

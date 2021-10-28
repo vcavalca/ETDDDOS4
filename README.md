@@ -33,5 +33,5 @@ sudo apt install mysql-server
 - The project uses a Makefile to compile the app, to run use the `make` command.
 
 ``` bash
-make && ./App
+make && ./mysql
 ```

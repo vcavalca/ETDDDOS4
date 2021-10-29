@@ -21,11 +21,12 @@ git clone https://github.com/vcavalca/ETDDDOS4.git
 
 ## To make it work
 
-- The project was done on linux, not tested on other systems, requires mysql client dev library and mysql server.
+- The project was done on linux, not tested on other systems, requires mysql client dev library, mysql server and clang compiler.
 
 ``` bash
 sudo apt install default-libmysqlclient-dev
 sudo apt install mysql-server
+sudo apt install clang
 ```
 
 ## How to run

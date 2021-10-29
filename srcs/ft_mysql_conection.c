@@ -16,7 +16,7 @@ void	*ft_create_db(MYSQL *con, char *db_name)
 		mysql_close(con);
 		exit(1);
 	}
-	printf("Criada com sucesso\n");
+	printf("Database created successfully\n");
 	return (EXIT_SUCCESS);
 }
 
@@ -36,7 +36,7 @@ void	*ft_delete_db(MYSQL *con, char *db_name)
 		mysql_close(con);
 		exit(1);
 	}
-	printf("Deletada com sucesso\n");
+	printf("Database successfully deleted\n");
 	return (EXIT_SUCCESS);
 }
 
@@ -61,7 +61,7 @@ void	*ft_create_table(MYSQL *con, char *db_name, char *table_name)
 	{
 		ft_finish_with_error(con);
 	}
-	printf("Tabela criada com sucesso\n");
+	printf("Table created successfully\n");
 	return (EXIT_SUCCESS);
 }
 
@@ -86,6 +86,41 @@ void	*ft_insert_into(MYSQL *con, char *db_name, char *table_name, char *id, char
 	{
 		ft_finish_with_error(con);
 	}
-	printf("Inserido com sucesso\n");
+	printf("Successfully inserted\n");
+	return (EXIT_SUCCESS);
+}
+
+void	*ft_read_info(MYSQL *con, char *db_name, char *table_name)
+{
+	char		*query;
+	MYSQL_RES	*result;
+	int			num_fields;
+	MYSQL_ROW	row;
+
+	if (mysql_real_connect(con, HOST, USER, PASS,
+			db_name, PORT, NULL, 0) == NULL)
+	{
+		ft_finish_with_error(con);
+	}
+	query = ft_strjoin(SELECTFROM, table_name);
+	if (mysql_query(con, query))
+	{
+		ft_finish_with_error(con);
+	}
+	result = mysql_store_result(con);
+	if (result == NULL)
+	{
+		ft_finish_with_error(con);
+	}
+	num_fields = mysql_num_fields(result);
+	while ((row = mysql_fetch_row(result)))
+	{
+		for (int i = 0; i < num_fields; i++)
+		{
+			printf("%s", row[i] ? row[i] : "NULL");
+		}
+		printf("\n");
+	}
+	mysql_free_result(result);
 	return (EXIT_SUCCESS);
 }

@@ -16,6 +16,9 @@ int	main(void)
 	printf("2 - Deleta um banco de dados\n");
 	printf("3 - Cria uma tabela fixa para o banco de dados com nome e preço\n");
 	printf("4 - Para entrar com valores na tabela\n");
+	printf("5 - Para imprimir a tabela\n");
+	printf("6 - Para atualizar o conteudo da tabela\n");
+	printf("7 - Para deletar uma linha de conteudo da tabela\n");
 	printf("----------------\n\n");
 	con = mysql_init(NULL);
 	printf("Digite a opção desejada: \n");
@@ -51,6 +54,36 @@ int	main(void)
 		printf("Digite o preço desejado: ");
 		scanf("%s", value_collum);
 		ft_insert_into(con, db_name, table_name, id, name_collum, value_collum);
+		break ;
+		case 5:
+			printf("Digite o nome da database para printar: ");
+		scanf("%s", db_name);
+		printf("Digite o nome da tabela: ");
+		scanf("%s", table_name);
+		ft_read_info(con, db_name, table_name);
+		break ;
+		case 6:
+			printf("Digite o nome da database: ");
+		scanf("%s", db_name);
+		printf("Digite o nome da tabela: ");
+		scanf("%s", table_name);
+		printf("Digite o id desejado: ");
+		scanf("%s", id);
+		printf("Digite o nome desejado: ");
+		scanf("%s", name_collum);
+		printf("Digite o preço desejado: ");
+		scanf("%s", value_collum);
+		ft_update_table(con, db_name, table_name, id, name_collum, value_collum);
+		break ;
+		case 7:
+			printf("Digite o nome da database: ");
+		scanf("%s", db_name);
+		printf("Digite o nome da tabela: ");
+		scanf("%s", table_name);
+		printf("Digite o id desejado: ");
+		scanf("%s", id);
+		ft_delete_line(con, db_name, table_name, id);
+		break ;
 		default :
 			break ;
 	}
